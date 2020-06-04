@@ -1,5 +1,8 @@
 {
     "private": true,
+    "scripts": {
+      "demo": "yarn --cwd demo dev"
+    },
     "workspaces": [
         "layout-kit-react",
         "demo"

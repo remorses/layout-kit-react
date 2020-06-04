@@ -5,6 +5,7 @@
     "description": "",
     "main": "dist/index.js",
     "module": "esm/index.js",
+    "sideEffects": false,
     "keywords": [
         "layout",
         "component",
@@ -26,8 +27,8 @@
         "timeout": 9999999999
     },
     "files": [
-        "/dist/*",
-        "/esm/*"
+        "dist",
+        "esm"
     ],
     "scripts": {
         "test": "NODE_ENV=test mocha --colors --exit",
@@ -54,5 +55,10 @@
         "@types/react": "^16.9.35",
         "@types/styled-system": "^5.1.9",
         "styled-system": "^5.1.5"
+    },
+    "peerDependencies": {
+        "react": "*",
+        "react-dom": "*",
+        "@emotion/core": "*"
     }
 }

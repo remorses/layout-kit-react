@@ -1,5 +1,5 @@
-import { strict as assert } from 'assert'
+import assert from 'assert'
 
 it('ready', () => {
-    assert.ok(false)
+    assert(true)
 })

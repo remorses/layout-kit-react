@@ -1,0 +1,31 @@
+{
+  "name": "demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@chakra-ui/core": "0.x",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "dokz": "latest",
+    "next": "latest",
+    "next-transpile-modules": "^3.3.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-layout": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "compose-function": "^3.0.3",
+    "typescript": "^3.9.3"
+  },
+  "main": "next.config.js",
+  "keywords": [],
+  "author": "Tommaso De Rossi, morse <beats.by.morse@gmail.com>",
+  "license": "ISC",
+  "description": ""
+}

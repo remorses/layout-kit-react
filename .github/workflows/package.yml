@@ -14,16 +14,16 @@ jobs:
               with:
                   node-version: 12
                   registry-url: https://registry.npmjs.org/
-            - run: cd layout-react && yarn
-            - run: cd layout-react && yarn test
-            - run: cd layout-react && tsc
-            - run: cd layout-react && tsc -m es6 --outDir esm
+            - run: cd layout-kit-react && yarn
+            - run: cd layout-kit-react && yarn test
+            - run: cd layout-kit-react && tsc
+            - run: cd layout-kit-react && tsc -m es6 --outDir esm
             - name: Bump version
               uses: remorses/bump-version@js
               with:
                   version_file: VERSION
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            - run: cd layout-react && yarn publish
+            - run: cd layout-kit-react && yarn publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.npm_token }}

@@ -1,4 +1,4 @@
-# layout-react
+# layout-kit-react
 
 Some layout components that follow the style-system spec
 
@@ -8,13 +8,13 @@ Some layout components that follow the style-system spec
 
 
 ```
-npm i layout-react @emotion/core
+npm i layout-kit-react @emotion/core
 ```
 
 ## Usage
 
 ```tsx
-import { Stack, Box } from 'layout-react'
+import { Stack, Box } from 'layout-kit-react'
 
 const App = () => {
     return (

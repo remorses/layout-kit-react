@@ -1,7 +1,7 @@
 {
-    "name": "lyt",
+    "name": "layout-kit-react",
     "_": "[bump]",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "",
     "main": "dist/index.js",
     "module": "esm/index.js",
@@ -57,8 +57,8 @@
         "styled-system": "^5.1.5"
     },
     "peerDependencies": {
+        "@emotion/core": "*",
         "react": "*",
-        "react-dom": "*",
-        "@emotion/core": "*"
+        "react-dom": "*"
     }
 }

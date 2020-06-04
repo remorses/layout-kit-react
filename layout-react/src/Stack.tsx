@@ -1,6 +1,13 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { Children, cloneElement, FC, forwardRef, isValidElement } from 'react'
+import {
+    Children,
+    cloneElement,
+    FC,
+    forwardRef,
+    isValidElement,
+    useMemo,
+} from 'react'
 import * as StyledSystem from 'styled-system'
 import { Box, BoxProps } from './Box'
 import { Flex, FlexProps } from './Flex'
@@ -59,12 +66,18 @@ export const Stack: FC<StackProps> = forwardRef(
     ) => {
         const selector = '> * + *'
 
-        const styles = {
-            [selector]: mapResponsive(direction, (value) => ({
-                [value === 'column' ? 'marginTop' : 'marginLeft']: spacing,
-                [value === 'column' ? 'marginLeft' : 'marginTop']: 0,
-            })),
-        }
+        const styles = useMemo(
+            () =>
+                css({
+                    [selector]: mapResponsive(direction, (value) => ({
+                        [value === 'column'
+                            ? 'marginTop'
+                            : 'marginLeft']: spacing,
+                        [value === 'column' ? 'marginLeft' : 'marginTop']: 0,
+                    })),
+                }),
+            [direction, spacing],
+        )
         return (
             <Box
                 ref={ref}
@@ -72,7 +85,7 @@ export const Stack: FC<StackProps> = forwardRef(
                 alignItems={align}
                 justifyContent={justify}
                 flexDirection={direction}
-                css={css(styles) as any}
+                css={styles as any}
                 {...rest}
             >
                 {children}

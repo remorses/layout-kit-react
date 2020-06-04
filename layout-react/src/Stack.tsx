@@ -16,14 +16,6 @@ import css from '@styled-system/css'
 
 interface IStack {
     /**
-     * If `true` the items will be stacked horizontally inline.
-     */
-    isInline?: boolean
-    /**
-     * If `true` the items will be displayed in reverse order.
-     */
-    isReversed?: boolean
-    /**
      * The direction to stack the items.
      */
     direction?: FlexProps['direction']
@@ -93,3 +85,6 @@ export const Stack: FC<StackProps> = forwardRef(
         )
     },
 )
+
+
+<Stack  />

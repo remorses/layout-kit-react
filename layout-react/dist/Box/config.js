@@ -145,10 +145,6 @@ exports.config = {
     float: true,
     willChange: true,
 };
-exports.config.bgAttachment = exports.config.backgroundAttachment;
-exports.config.textDecor = exports.config.textDecoration;
-exports.config.listStylePos = exports.config.listStylePosition;
-exports.config.listStyleImg = exports.config.listStyleImage;
 var extraConfig = styled_system_1.system(exports.config);
 exports.default = extraConfig;
 // Create an issue on @styled-system/css to allow custom alias to be passed to the `css` function

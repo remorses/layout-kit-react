@@ -31,7 +31,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var Box_1 = require("./Box");
-exports.Flex = react_1.forwardRef(function (_a, ref) {
+exports.Spacer = react_1.forwardRef(function (_a, ref) {
     var align = _a.align, justify = _a.justify, wrap = _a.wrap, direction = _a.direction, rest = __rest(_a, ["align", "justify", "wrap", "direction"]);
-    return (react_1.default.createElement(Box_1.Box, __assign({ ref: ref, display: 'flex', flexDirection: direction, alignItems: align, justifyContent: justify, flexWrap: wrap }, rest)));
+    return (react_1.default.createElement(Box_1.Box, __assign({ flex: '1', justifySelf: 'stretch', alignSelf: 'stretch' }, rest)));
 });

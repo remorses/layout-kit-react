@@ -1,14 +1,15 @@
 import { FC } from 'react';
 import { BoxProps } from './Box';
+import { ResponsiveValue } from 'styled-system';
 interface IFlex {
     /**
      * Shorthand for Styled-System `alignItems` prop
      */
-    align?: BoxProps['alignItems'];
+    align?: ResponsiveValue<'center' | 'stretch' | 'flex-start' | 'flex-end' | 'baseline' | 'inherit'>;
     /**
      * Shorthand for Styled-System `justifyContent` prop
      */
-    justify?: BoxProps['justifyContent'];
+    justify?: ResponsiveValue<'center' | 'stretch' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly' | 'inherit'>;
     /**
      * Shorthand for Styled-System `flexWrap` prop
      */
@@ -16,7 +17,7 @@ interface IFlex {
     /**
      * Shorthand for Styled-System `flexDirection` prop
      */
-    direction?: BoxProps['flexDirection'];
+    direction?: ResponsiveValue<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
 }
 export declare type FlexProps = IFlex & BoxProps;
 export declare const Flex: FC<FlexProps>;

@@ -134,12 +134,8 @@ export const config = {
   willChange: true,
 };
 
-config.bgAttachment = config.backgroundAttachment;
-config.textDecor = config.textDecoration;
-config.listStylePos = config.listStylePosition;
-config.listStyleImg = config.listStyleImage;
 
-const extraConfig = system(config);
+const extraConfig = system(config as any);
 
 export default extraConfig;
 

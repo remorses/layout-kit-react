@@ -99,5 +99,4 @@ declare type StyledSystemProps = StyledSystem.LayoutProps & StyledSystem.ColorPr
 declare type ModifiedStyledSystemProps = TypographyProps & IFontSize & ILetterSpacing & IFontWeight & ILineHeight & ICustomConfig;
 declare type BoxHTMLProps = React.RefAttributes<any> & React.HTMLAttributes<any>;
 export declare type BoxProps = BoxHTMLProps & StyledSystemProps & ModifiedStyledSystemProps & As & Truncated;
-declare const Box: React.FC<BoxProps>;
-export default Box;
+export {};

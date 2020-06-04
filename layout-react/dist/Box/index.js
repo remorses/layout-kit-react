@@ -6,9 +6,6 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
             r[k] = a[j];
     return r;
 };
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -16,7 +13,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /** @jsx jsx */
 var styled_1 = __importDefault(require("@emotion/styled"));
 var should_forward_prop_1 = require("@styled-system/should-forward-prop");
-__export(require("./types"));
 var styled_system_1 = require("styled-system");
 var config_1 = __importDefault(require("./config"));
 exports.truncate = function (props) {

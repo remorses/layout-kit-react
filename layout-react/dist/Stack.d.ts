@@ -4,14 +4,6 @@ import { BoxProps } from './Box';
 import { FlexProps } from './Flex';
 interface IStack {
     /**
-     * If `true` the items will be stacked horizontally inline.
-     */
-    isInline?: boolean;
-    /**
-     * If `true` the items will be displayed in reverse order.
-     */
-    isReversed?: boolean;
-    /**
      * The direction to stack the items.
      */
     direction?: FlexProps['direction'];
@@ -31,11 +23,6 @@ interface IStack {
      * The distribution of the stack item. Similar to `justify-content`
      */
     justify?: FlexProps['justify'];
-    /**
-     * If `true`, the children will be wrapped in a `Box` with
-     * `display: inline-block`, and the `Box` will take the spacing props
-     */
-    shouldWrapChildren?: boolean;
 }
 export declare type StackProps = IStack & BoxProps;
 export declare const Stack: FC<StackProps>;

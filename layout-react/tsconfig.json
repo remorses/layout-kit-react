@@ -14,7 +14,8 @@
         "strict": false,
         "esModuleInterop": true,
         "noImplicitAny": false,
-        "jsx": "react"
+        "jsx": "react",
+        "skipLibCheck": true
     },
     "exclude": [
         "node_modules",

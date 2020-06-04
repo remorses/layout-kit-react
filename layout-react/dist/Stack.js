@@ -21,46 +21,32 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @jsx jsx */
 var core_1 = require("@emotion/core");
 var react_1 = require("react");
 var Box_1 = require("./Box");
-var Flex_1 = require("./Flex");
+var utils_1 = require("./utils");
+var css_1 = __importDefault(require("@styled-system/css"));
 exports.Stack = react_1.forwardRef(function (_a, ref) {
-    var direction = _a.direction, _b = _a.isInline, isInline = _b === void 0 ? false : _b, _c = _a.isReversed, isReversed = _c === void 0 ? false : _c, children = _a.children, align = _a.align, justify = _a.justify, _d = _a.spacing, spacing = _d === void 0 ? 2 : _d, shouldWrapChildren = _a.shouldWrapChildren, rest = __rest(_a, ["direction", "isInline", "isReversed", "children", "align", "justify", "spacing", "shouldWrapChildren"]);
-    var _isReversed = isReversed || (direction && direction.endsWith('reverse'));
-    var _isInline = isInline || (direction && direction.startsWith('row'));
-    var _direction;
-    if (_isInline) {
-        _direction = 'row';
-    }
-    if (_isReversed) {
-        _direction = isInline ? 'row-reverse' : 'column-reverse';
-    }
-    if (direction) {
-        _direction = direction;
-    }
-    if (!_isInline && !_isReversed && !direction) {
-        _direction = 'column';
-    }
-    var validChildrenArray = react_1.Children.toArray(children).filter(react_1.isValidElement);
-    return (core_1.jsx(Flex_1.Flex, __assign({ align: align, justify: justify, direction: _direction }, rest, { ref: ref }), validChildrenArray.map(function (child, index) {
-        var _a, _b;
-        var isLastChild = validChildrenArray.length === index + 1;
-        var spacingProps = _isInline
-            ? (_a = {},
-                _a[_isReversed ? 'ml' : 'mr'] = isLastChild
-                    ? null
-                    : spacing,
-                _a) : (_b = {},
-            _b[_isReversed ? 'mt' : 'mb'] = isLastChild
-                ? null
-                : spacing,
-            _b);
-        if (shouldWrapChildren) {
-            return (core_1.jsx(Box_1.Box, __assign({ d: 'inline-block' }, spacingProps, { key: "stack-box-wrapper-" + index }), child));
-        }
-        return react_1.cloneElement(child, spacingProps);
-    })));
+    var _b = _a.direction, direction = _b === void 0 ? 'column' : _b, _c = _a.align, align = _c === void 0 ? 'flex-start' : _c, justify = _a.justify, _d = _a.spacing, spacing = _d === void 0 ? '0px' : _d, children = _a.children, rest = __rest(_a, ["direction", "align", "justify", "spacing", "children"]);
+    var selector = '> * + *';
+    var styles = react_1.useMemo(function () {
+        var _a;
+        return css_1.default((_a = {},
+            _a[selector] = utils_1.mapResponsive(direction, function (value) {
+                var _a;
+                return (_a = {},
+                    _a[value === 'column'
+                        ? 'marginTop'
+                        : 'marginLeft'] = spacing,
+                    _a[value === 'column' ? 'marginLeft' : 'marginTop'] = 0,
+                    _a);
+            }),
+            _a));
+    }, [direction, spacing]);
+    return (core_1.jsx(Box_1.Box, __assign({ ref: ref, display: 'flex', alignItems: align, justifyContent: justify, flexDirection: direction, css: styles }, rest), children));
 });

@@ -1,1 +1,0 @@
-# nodejs-lib-template

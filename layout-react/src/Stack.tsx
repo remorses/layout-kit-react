@@ -35,11 +35,6 @@ interface IStack {
      * The distribution of the stack item. Similar to `justify-content`
      */
     justify?: FlexProps['justify']
-    /**
-     * If `true`, the children will be wrapped in a `Box` with
-     * `display: inline-block`, and the `Box` will take the spacing props
-     */
-    shouldWrapChildren?: boolean
 }
 
 export type StackProps = IStack & BoxProps
@@ -85,6 +80,3 @@ export const Stack: FC<StackProps> = forwardRef(
         )
     },
 )
-
-
-<Stack  />

@@ -24,6 +24,6 @@ jobs:
                   version_file: VERSION
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            - run: yarn publish
+            - run: cd layout-react && yarn publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.npm_token }}

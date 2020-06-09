@@ -58,9 +58,9 @@ export const Stack: FC<StackProps> = forwardRef(
                 css({
                     [selector]: mapResponsive(direction, (value) => ({
                         [value === 'column'
-                            ? 'marginTop'
+                            ? 'marginBottom'
                             : 'marginLeft']: spacing,
-                        [value === 'column' ? 'marginLeft' : 'marginTop']: 0,
+                        [value === 'column' ? 'marginLeft' : 'marginBottom']: 0,
                     })),
                 }),
             [direction, spacing],

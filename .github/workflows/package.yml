@@ -21,7 +21,7 @@ jobs:
             - name: Bump version
               uses: remorses/bump-version@js
               with:
-                  version_file: VERSION
+                  version_file: layout-kit-react/VERSION
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - run: cd layout-kit-react && yarn publish

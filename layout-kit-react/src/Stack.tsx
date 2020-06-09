@@ -43,7 +43,7 @@ export const Stack: FC<StackProps> = forwardRef(
     (
         {
             direction = 'column',
-            align,
+            align = 'stretch',
             justify,
             spacing = '0px',
             children,

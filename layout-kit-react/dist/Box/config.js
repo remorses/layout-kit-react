@@ -11,6 +11,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.transformAliasProps = exports.config = void 0;
 var styled_system_1 = require("styled-system");
 var isNumber = function (n) { return typeof n === "number" && !isNaN(n); };
 var getWidth = function (n, scale) {

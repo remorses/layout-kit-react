@@ -34,11 +34,9 @@ var utils_1 = require("./utils");
 var css_1 = __importDefault(require("@styled-system/css"));
 exports.Stack = react_1.forwardRef(function (_a, ref) {
     var _b = _a.direction, direction = _b === void 0 ? 'column' : _b, _c = _a.align, align = _c === void 0 ? 'stretch' : _c, justify = _a.justify, _d = _a.spacing, spacing = _d === void 0 ? '0px' : _d, children = _a.children, rest = __rest(_a, ["direction", "align", "justify", "spacing", "children"]);
-    var selector = '> :not(style) + :not(style)';
     var styles = react_1.useMemo(function () {
-        var _a;
-        return css_1.default((_a = {},
-            _a[selector] = utils_1.mapResponsive(direction, function (value) {
+        return css_1.default({
+            ':not(style)': utils_1.mapResponsive(direction, function (value) {
                 var _a;
                 return (_a = {},
                     _a[value === 'column'
@@ -47,7 +45,10 @@ exports.Stack = react_1.forwardRef(function (_a, ref) {
                     _a[value === 'column' ? 'marginLeft' : 'marginTop'] = 0,
                     _a);
             }),
-            _a));
+        });
     }, [direction, spacing]);
-    return (core_1.jsx(Box_1.Box, __assign({ ref: ref, display: 'flex', alignItems: align, justifyContent: justify, flexDirection: direction, css: styles }, rest), children));
+    return (core_1.jsx(Box_1.Box, __assign({ ref: ref, display: 'flex', alignItems: align, justifyContent: justify, flexDirection: direction }, rest), react_1.Children.map(children, function (child) {
+        console.log(child.type);
+        return core_1.jsx(child.type, __assign(__assign({}, child.props), { css: styles }));
+    })));
 });

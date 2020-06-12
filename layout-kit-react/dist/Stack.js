@@ -48,6 +48,7 @@ exports.Stack = react_1.forwardRef(function (_a, ref) {
         });
     }, [direction, spacing]);
     return (core_1.jsx(Box_1.Box, __assign({ ref: ref, display: 'flex', alignItems: align, justifyContent: justify, flexDirection: direction }, rest), react_1.Children.map(children, function (child) {
+        console.log(child.type);
         return core_1.jsx(child.type, __assign(__assign({}, child.props), { css: styles }));
     })));
 });

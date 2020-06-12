@@ -7,6 +7,7 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
     return r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.mapResponsive = void 0;
 var assertion_1 = require("./assertion");
 function mapResponsive(prop, mapper) {
     if (assertion_1.isArray(prop)) {

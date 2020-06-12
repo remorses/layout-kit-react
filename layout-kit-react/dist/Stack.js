@@ -25,6 +25,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Stack = void 0;
 /** @jsx jsx */
 var core_1 = require("@emotion/core");
 var react_1 = require("react");
@@ -32,7 +33,7 @@ var Box_1 = require("./Box");
 var utils_1 = require("./utils");
 var css_1 = __importDefault(require("@styled-system/css"));
 exports.Stack = react_1.forwardRef(function (_a, ref) {
-    var _b = _a.direction, direction = _b === void 0 ? 'column' : _b, _c = _a.align, align = _c === void 0 ? 'flex-start' : _c, justify = _a.justify, _d = _a.spacing, spacing = _d === void 0 ? '0px' : _d, children = _a.children, rest = __rest(_a, ["direction", "align", "justify", "spacing", "children"]);
+    var _b = _a.direction, direction = _b === void 0 ? 'column' : _b, _c = _a.align, align = _c === void 0 ? 'stretch' : _c, justify = _a.justify, _d = _a.spacing, spacing = _d === void 0 ? '0px' : _d, children = _a.children, rest = __rest(_a, ["direction", "align", "justify", "spacing", "children"]);
     var selector = '> * + *';
     var styles = react_1.useMemo(function () {
         var _a;

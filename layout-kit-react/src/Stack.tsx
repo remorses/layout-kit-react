@@ -51,16 +51,16 @@ export const Stack: FC<StackProps> = forwardRef(
         },
         ref,
     ) => {
-        const selector = '> * + *'
+        const selector = '> :not(style) + :not(style)'
 
         const styles = useMemo(
             () =>
                 css({
                     [selector]: mapResponsive(direction, (value) => ({
                         [value === 'column'
-                            ? 'marginBottom'
+                            ? 'marginTop'
                             : 'marginLeft']: spacing,
-                        [value === 'column' ? 'marginLeft' : 'marginBottom']: 0,
+                        [value === 'column' ? 'marginLeft' : 'marginTop']: 0,
                     })),
                 }),
             [direction, spacing],

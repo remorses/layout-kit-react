@@ -72,7 +72,6 @@ export const Stack: FC<StackProps> = forwardRef(
                 {...rest}
             >
                 {Children.map(children, (child: React.ReactElement<any>) => {
-                    console.log(child.props.css)
                     return jsx(child.type, {
                         ...child.props,
                         css: child.props.css

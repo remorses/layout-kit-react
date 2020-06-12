@@ -51,18 +51,20 @@ export const Stack: FC<StackProps> = forwardRef(
         },
         ref,
     ) => {
+        const selector = '> * + *'
+
         const styles = useMemo(
-            () => ({
-                ':not(style)': mapResponsive(direction, (value) => ({
-                    [value === 'column'
-                        ? 'marginBottom'
-                        : 'marginRight']: spacing,
-                    [value === 'column' ? 'marginRight' : 'marginBottom']: 0,
-                })),
-            }),
+            () =>
+                css({
+                    [selector]: mapResponsive(direction, (value) => ({
+                        [value === 'column'
+                            ? 'marginTop'
+                            : 'marginLeft']: spacing,
+                        [value === 'column' ? 'marginLeft' : 'marginTop']: 0,
+                    })),
+                }),
             [direction, spacing],
         )
-        const childrenList = Children.toArray(children)
         return (
             <Box
                 ref={ref}
@@ -70,21 +72,10 @@ export const Stack: FC<StackProps> = forwardRef(
                 alignItems={align}
                 justifyContent={justify}
                 flexDirection={direction}
-                // css={styles as any}
+                css={styles as any}
                 {...rest}
             >
-                {childrenList.map((child: React.ReactElement<any>, i) => {
-                    const style = child.props.css
-                        ? [child.props.css, styles]
-                        : styles
-                    return jsx(child.type, {
-                        ...child.props,
-                        css:
-                            i == childrenList.length - 1
-                                ? child.props.css
-                                : style,
-                    })
-                })}
+                {children}
             </Box>
         )
     },

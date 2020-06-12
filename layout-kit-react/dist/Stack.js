@@ -34,14 +34,20 @@ exports.Stack = react_1.forwardRef(function (_a, ref) {
         ':not(style)': utils_1.mapResponsive(direction, function (value) {
             var _a;
             return (_a = {},
-                _a[value === 'column' ? 'marginTop' : 'marginLeft'] = spacing,
-                _a[value === 'column' ? 'marginLeft' : 'marginTop'] = 0,
+                _a[value === 'column'
+                    ? 'marginBottom'
+                    : 'marginRight'] = spacing,
+                _a[value === 'column' ? 'marginRight' : 'marginBottom'] = 0,
                 _a);
         }),
     }); }, [direction, spacing]);
-    return (core_1.jsx(Box_1.Box, __assign({ ref: ref, display: 'flex', alignItems: align, justifyContent: justify, flexDirection: direction }, rest), react_1.Children.map(children, function (child) {
-        return core_1.jsx(child.type, __assign(__assign({}, child.props), { css: child.props.css
-                ? [child.props.css, styles]
-                : styles }));
+    var childrenList = react_1.Children.toArray(children);
+    return (core_1.jsx(Box_1.Box, __assign({ ref: ref, display: 'flex', alignItems: align, justifyContent: justify, flexDirection: direction }, rest), childrenList.map(function (child, i) {
+        var style = child.props.css
+            ? [child.props.css, styles]
+            : styles;
+        return core_1.jsx(child.type, __assign(__assign({}, child.props), { css: i == childrenList.length - 1
+                ? child.props.css
+                : style }));
     })));
 });

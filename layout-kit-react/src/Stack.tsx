@@ -54,13 +54,15 @@ export const Stack: FC<StackProps> = forwardRef(
         const styles = useMemo(
             () => ({
                 ':not(style)': mapResponsive(direction, (value) => ({
-                    [value === 'column' ? 'marginTop' : 'marginLeft']: spacing,
-                    [value === 'column' ? 'marginLeft' : 'marginTop']: 0,
+                    [value === 'column'
+                        ? 'marginBottom'
+                        : 'marginRight']: spacing,
+                    [value === 'column' ? 'marginRight' : 'marginBottom']: 0,
                 })),
             }),
             [direction, spacing],
         )
-
+        const childrenList = Children.toArray(children)
         return (
             <Box
                 ref={ref}
@@ -71,12 +73,16 @@ export const Stack: FC<StackProps> = forwardRef(
                 // css={styles as any}
                 {...rest}
             >
-                {Children.map(children, (child: React.ReactElement<any>) => {
+                {childrenList.map((child: React.ReactElement<any>, i) => {
+                    const style = child.props.css
+                        ? [child.props.css, styles]
+                        : styles
                     return jsx(child.type, {
                         ...child.props,
-                        css: child.props.css
-                            ? [child.props.css, styles]
-                            : styles,
+                        css:
+                            i == childrenList.length - 1
+                                ? child.props.css
+                                : style,
                     })
                 })}
             </Box>

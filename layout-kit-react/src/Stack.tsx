@@ -51,7 +51,7 @@ export const Stack: FC<StackProps> = forwardRef(
         },
         ref,
     ) => {
-        const selector = '> *:not(style) + *:not(style)'
+        const selector = '> *:not(style) ~ *:not(style)'
 
         const styles = useMemo(
             () =>

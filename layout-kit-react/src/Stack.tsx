@@ -43,7 +43,7 @@ export const Stack: FC<StackProps> = forwardRef(
     (
         {
             direction = 'column',
-            align = 'stretch',
+            align = 'flex-start',
             justify,
             spacing = '0px',
             children,
@@ -51,7 +51,7 @@ export const Stack: FC<StackProps> = forwardRef(
         },
         ref,
     ) => {
-        const selector = '> * + *'
+        const selector = '> *:not(style) + *:not(style)'
 
         const styles = useMemo(
             () =>

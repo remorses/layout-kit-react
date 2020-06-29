@@ -20,3 +20,19 @@ import { ZStack, Box } from 'layout-kit-react/src'
         />
     </ZStack>
 </Playground>
+
+<Playground>
+    <ZStack m='40px' overflow='hidden' justify='start' height='200px'>
+        <img src='/bg.svg' width='100%' />
+        <Box
+            opacity={0.2}
+            transform='rotate(5deg)'
+            w='600px'
+            h='100px'
+            bg='yellow.500'
+        />
+        <Box fontSize='4em' fontWeight='600'>
+            Some Cool Heading
+        </Box>
+    </ZStack>
+</Playground>

@@ -1,4 +1,5 @@
 import { Playground } from 'dokz/src'
+import { Image } from '@chakra-ui/core'
 import { ZStack, Box } from 'layout-kit-react/src'
 
 <Playground>
@@ -23,15 +24,16 @@ import { ZStack, Box } from 'layout-kit-react/src'
 
 <Playground>
     <ZStack m='40px' overflow='hidden' justify='start' height='200px'>
-        <img src='/bg.svg' width='100%' />
+        <Image src='/bg.svg' width='100%' opacity={0.2} />
         <Box
+            mt='10'
             opacity={0.2}
-            transform='rotate(5deg)'
+            transform='rotate(2deg)'
             w='600px'
             h='100px'
             bg='yellow.500'
         />
-        <Box fontSize='4em' fontWeight='600'>
+        <Box mt='10' fontSize='4em' fontWeight='600'>
             Some Cool Heading
         </Box>
     </ZStack>

@@ -106,3 +106,26 @@ export const ZStack = ({
         </Box>
     )
 }
+
+
+// export const ZStack = ({
+//     children,
+//     direction = 'column',
+//     align = 'center',
+//     justify = 'center',
+//     ...rest
+// }: Omit<StackProps, 'spacing'>) => {
+//     const stackProps: StackProps = {
+//         spacing: '0px',
+//         direction,
+//         align,
+//         justify,
+//     }
+//     return (
+//         <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center' {...rest}>
+//             {Children.map(children, (child, i) => {
+//                 return <Box w='100%' flex='1' transform={`translateX(-${100 * i}%)`}>{child}</Box>
+//             })}
+//         </Box>
+//     )
+// }

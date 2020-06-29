@@ -80,3 +80,23 @@ export const Stack: FC<StackProps> = forwardRef(
         )
     },
 )
+
+export const ZStack = ({ children, ...rest }) => {
+    return (
+        <Box display='grid' {...rest}>
+            {Children.map(children, (child, i) => {
+                return (
+                    <Box
+                        gridColumn='1'
+                        gridRow='1'
+                        display='flex'
+                        justifyContent='center'
+                        alignItems='center'
+                    >
+                        {child}
+                    </Box>
+                )
+            })}
+        </Box>
+    )
+}

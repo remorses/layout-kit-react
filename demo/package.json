@@ -8,15 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/core": "0.x",
+    "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "dokz": "latest",
+    "dokz": "^1.0.48",
+    "layout-kit-react": "*",
     "next": "latest",
     "next-transpile-modules": "^3.3.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "layout-kit-react": "*"
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
     "@types/react": "^16.9.35",

@@ -26,4 +26,5 @@ interface IStack {
 }
 export declare type StackProps = IStack & BoxProps;
 export declare const Stack: FC<StackProps>;
+export declare const ZStack: ({ children, direction, align, justify, ...rest }: Omit<StackProps, 'spacing'>) => JSX.Element;
 export {};

@@ -11,7 +11,7 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "dokz": "^1.0.48",
+    "dokz": "^1.0.65",
     "layout-kit-react": "*",
     "next": "latest",
     "next-transpile-modules": "^3.3.0",

@@ -53,18 +53,23 @@ export const Stack: FC<StackProps> = forwardRef(
     ) => {
         const selector = '> *:not(style) ~ *:not(style)'
 
+        const directionStyles = {
+            column: { mt: spacing, ml: 0 },
+            row: { ml: spacing, mt: 0 },
+            'column-reverse': { mb: spacing, mr: 0 },
+            'row-reverse': { mr: spacing, mb: 0 },
+        }
+
         const styles = useMemo(
             () =>
                 css({
                     [selector]: mapResponsive(direction, (value) => ({
-                        [value === 'column'
-                            ? 'marginTop'
-                            : 'marginLeft']: spacing,
-                        [value === 'column' ? 'marginLeft' : 'marginTop']: 0,
+                        ...directionStyles[value],
                     })),
                 }),
             [direction, spacing],
         )
+
         return (
             <Box
                 ref={ref}
@@ -106,7 +111,6 @@ export const ZStack = ({
         </Box>
     )
 }
-
 
 // export const ZStack = ({
 //     children,

@@ -3,14 +3,12 @@ import { isArray, isObject } from './assertion'
 export function mapResponsive(prop: any, mapper: (val: any) => any) {
     if (isArray(prop)) {
         // remove null values, using the previous value
-        prop = prop.reduce((acc: string[], x: string) => {
-            if (x == null) {
-                let last = acc.length !== 0 ? acc[acc.length - 1] : x
-                return [...acc.slice(0, -1), last, last]
+        return prop.map((x) => {
+            if (x === null) {
+                return null
             }
-            return [...acc, x]
-        }, [])
-        return prop.map(mapper)
+            return mapper(x)
+        })
     }
 
     if (isObject(prop)) {

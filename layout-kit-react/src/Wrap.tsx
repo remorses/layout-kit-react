@@ -40,7 +40,7 @@ export const Wrap: FC<WrapProps> = forwardRef(
     (
         {
             direction = 'row',
-            align = 'flex-start',
+            align,
             justify,
             spacing = '0px',
             children,

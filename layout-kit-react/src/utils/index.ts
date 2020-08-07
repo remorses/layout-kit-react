@@ -1,4 +1,5 @@
 import { isArray, isObject } from './assertion'
+import React from 'react'
 
 export function mapResponsive(prop: any, mapper: (val: any) => any) {
     if (isArray(prop)) {
@@ -23,4 +24,10 @@ export function mapResponsive(prop: any, mapper: (val: any) => any) {
     }
 
     return null
+}
+
+export function getValidChildren(children: React.ReactNode) {
+    return React.Children.toArray(children).filter((child) =>
+        React.isValidElement(child),
+    ) as React.ReactElement[]
 }

@@ -13,3 +13,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./Stack"), exports);
 __exportStar(require("./Flex"), exports);
 __exportStar(require("./Box"), exports);
+__exportStar(require("./Wrap"), exports);

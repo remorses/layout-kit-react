@@ -1,5 +1,13 @@
 # layout-kit-react
 
+
+## Features
+
+- Design tokens with autocomplete, stop using magic value in px and instead use the design system (easily discoverable thanks to auto complete)
+- Style is strictly coupled with markup
+- 
+
+
 Some layout components that follow the style-system spec
 
 -   `Box`

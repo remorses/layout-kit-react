@@ -1,5 +1,7 @@
 /** @jsx jsx */
 import styled from '@emotion/styled'
+import { jsx } from '@emotion/core'
+
 import {
     createShouldForwardProp,
     props,
@@ -19,7 +21,13 @@ import {
     compose,
 } from 'styled-system'
 import extraConfig from './config'
-import { FC } from 'react'
+import {
+    FC,
+    PropsWithChildren,
+    ReactElement,
+    ComponentPropsWithoutRef,
+    ElementType,
+} from 'react'
 import { BoxProps } from './types'
 
 export const truncate = (props) => {
@@ -66,7 +74,13 @@ const shouldForwardProp = createShouldForwardProp([
  */
 const nativeHTMLPropAlias = ['htmlWidth', 'htmlHeight']
 
-export const Box: FC<BoxProps> = styled('div', {
+type BoxType = <as = null>(
+    props: { as?: as } & Omit<BoxProps, 'as'> &
+        (as extends ElementType ? ComponentPropsWithoutRef<as> : {}),
+    context?: any,
+) => ReactElement<any, any>
+
+export const Box_: any = styled('div', {
     shouldForwardProp: (prop) => {
         if (nativeHTMLPropAlias.includes(prop)) {
             return true
@@ -75,3 +89,10 @@ export const Box: FC<BoxProps> = styled('div', {
         }
     },
 })(truncate as any, systemProps) as any
+
+export function Box<AS extends ElementType | never>(
+    props: { as?: AS } & Omit<BoxProps, 'as'> &
+        (AS extends never ? {} : ComponentPropsWithoutRef<AS>),
+): any {
+    return <Box_ {...props} />
+}

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
+import { jsx, } from '@emotion/react'
 import {
     Children,
     cloneElement,
@@ -12,7 +12,7 @@ import * as StyledSystem from 'styled-system'
 import { Box, BoxProps } from './Box'
 import { Flex, FlexProps } from './Flex'
 import { mapResponsive } from './utils'
-import css from '@styled-system/css'
+import css from './css'
 
 interface IStack {
     /**

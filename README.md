@@ -8,7 +8,7 @@ Some layout components that follow the style-system spec
 
 
 ```
-npm i layout-kit-react @emotion/core
+npm i layout-kit-react @emotion/react
 ```
 
 ## Usage

@@ -8,10 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/core": "^0.8.0",
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "dokz": "^1.0.65",
+    "@chakra-ui/react": "^1.6.8",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "dokz": "^2.0.7",
+    "framer-motion": "^4.1.17",
     "layout-kit-react": "*",
     "next": "latest",
     "next-transpile-modules": "^3.3.0",

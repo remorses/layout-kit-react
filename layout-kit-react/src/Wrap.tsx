@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, ThemeContext } from '@emotion/core'
+import { jsx, ThemeContext } from '@emotion/react'
 import {
     Children,
     cloneElement,

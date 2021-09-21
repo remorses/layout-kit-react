@@ -68,7 +68,7 @@ const nativeHTMLPropAlias = ['htmlWidth', 'htmlHeight']
 
 export const Box: FC<BoxProps> = styled('div', {
     shouldForwardProp: (prop) => {
-        if (nativeHTMLPropAlias.includes(prop)) {
+        if (typeof prop === 'string' && nativeHTMLPropAlias.includes(prop)) {
             return true
         } else {
             return shouldForwardProp(prop)
